@@ -4,17 +4,19 @@
 :set shiftwidth=4
 :set smarttab
 :set softtabstop=4
-:set mouse=a
+:set mouse=v
 :set nu ru et
 :set ts=2 sts=2 sw=2
-:set cursorline
 :set hlsearch
-:set background=dark
 :set syntax=on
-
+:set cursorline
+:set t_Co=256
 
 call plug#begin('~/.config/nvim/plugins')
 
+Plug 'mhinz/vim-grepper'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'tomasr/molokai'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'flazz/vim-colorschemes'
@@ -27,8 +29,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ray-x/go.nvim'
-" Plug 'ray-x/guihua.lua' " recommanded if need floating window support
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'ray-x/guihua.lua' " recommanded if need floating window support
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
@@ -47,7 +49,7 @@ call plug#end()
 
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-.> :NERDTree<CR>
-nnoremap <C-]> :NERDTreeToggle<CR>
+nnoremap <S-q> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 
 " File explore
@@ -63,7 +65,9 @@ nmap <F8> :TagbarToggle<CR>
 
 :set completeopt-=preview " For No Previews
 
-:colorscheme monokai
+:colorscheme purify
+
+:set background=dark
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -97,5 +101,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
-let g:molokai_original = 1
-let g:rehash256 = 1
+map <ESC>[5D <C-Left>
+map <ESC>[5C <C-Right>
+map! <ESC>[5D <C-Left>
+map! <ESC>[5C <C-Right>
+
+
