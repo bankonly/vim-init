@@ -4,6 +4,7 @@
 :set shiftwidth=4
 :set smarttab
 :set softtabstop=4
+:set relativenumber
 :set mouse=v
 :set nu ru et
 :set ts=2 sts=2 sw=2
