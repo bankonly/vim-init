@@ -49,11 +49,11 @@ set encoding=UTF-8
 call plug#end()
 
 
-nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-.> :NERDTree<CR>
-nnoremap <S-q> :NERDTreeToggle<CR>
+nnoremap W :NERDTreeFocus<CR>
+nnoremap Q :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 
+nnoremap F :FZF<CR>
 " File explore
 " nnoremap <C-i> :Ag<CR>
 
@@ -67,9 +67,9 @@ nmap <F8> :TagbarToggle<CR>
 
 :set completeopt-=preview " For No Previews
 
-:colorscheme purify
-
 :set background=dark
+:colorscheme gruvbox
+
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -101,6 +101,8 @@ let g:airline_symbols.linenr = ''
 let g:go_def_mapping_enabled = 0
 let g:go_doc_keywordprg_enabled = 0
 let g:go_textobj_enabled = 0
+
+
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
