@@ -47,6 +47,7 @@ set encoding=UTF-8
 
 call plug#end()
 
+
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-.> :NERDTree<CR>
 nnoremap <S-q> :NERDTreeToggle<CR>
@@ -96,6 +97,10 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
+let g:go_textobj_enabled = 0
+
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
@@ -107,3 +112,7 @@ map! <ESC>[5D <C-Left>
 map! <ESC>[5C <C-Right>
 
 
+nnoremap J :m .+1<CR>==
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+nnoremap K :m .-2<CR>==
