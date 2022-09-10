@@ -101,7 +101,8 @@ let g:airline_symbols.linenr = ''
 let g:go_def_mapping_enabled = 0
 let g:go_doc_keywordprg_enabled = 0
 let g:go_textobj_enabled = 0
-
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
 
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
