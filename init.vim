@@ -15,7 +15,7 @@
 
 call plug#begin('~/.config/nvim/plugins')
 
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-grepper'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
@@ -111,6 +111,10 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
+nnoremap <Space>m <cmd>FloatermToggle<CR>
+tnoremap   <silent>   <Space>k   <C-\><C-n>:FloatermKill<CR>
+tnoremap   <silent>   <Space>M   <C-\><C-n>:FloatermHide<CR>
+
 map <ESC>[5D <C-Left>
 map <ESC>[5C <C-Right>
 map! <ESC>[5D <C-Left>
@@ -121,3 +125,4 @@ nnoremap J :m .+1<CR>==
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 nnoremap K :m .-2<CR>==
+
