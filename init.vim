@@ -15,6 +15,7 @@
 
 call plug#begin('~/.config/nvim/plugins')
 
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'mhinz/vim-grepper'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
