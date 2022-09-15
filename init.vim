@@ -15,6 +15,7 @@
 
 call plug#begin('~/.config/nvim/plugins')
 
+Plug 'tomasiser/vim-code-dark'
 Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-grepper'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
@@ -44,7 +45,6 @@ Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-
 set encoding=UTF-8
 
 call plug#end()
@@ -69,7 +69,7 @@ nmap <F8> :TagbarToggle<CR>
 :set completeopt-=preview " For No Previews
 
 :set background=dark
-:colorscheme gruvbox
+:colorscheme codedark
 
 
 let g:NERDTreeDirArrowExpandable="+"
@@ -105,11 +105,12 @@ let g:go_textobj_enabled = 0
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 
-
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+inoremap jj <ESC>
 
 nnoremap <Space>m <cmd>FloatermToggle<CR>
 tnoremap   <silent>   <Space>k   <C-\><C-n>:FloatermKill<CR>
