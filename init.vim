@@ -110,7 +110,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
-inoremap jj <ESC>
+nnoremap pp :FZF<CR>
 
 nnoremap <Space>m <cmd>FloatermToggle<CR>
 tnoremap   <silent>   <Space>k   <C-\><C-n>:FloatermKill<CR>
