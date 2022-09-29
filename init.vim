@@ -7,7 +7,7 @@
 :set relativenumber
 :set mouse=v
 :set nu ru et
-:set ts=2 sts=2 sw=2
+:set ts=4 sts=4 sw=4
 :set hlsearch
 :set syntax=on
 :set cursorline
